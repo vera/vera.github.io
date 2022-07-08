@@ -1,0 +1,465 @@
+/*
+ ******************************************************************************
+ * General
+ ******************************************************************************
+ */
+
+html {
+  font-size: 10px;
+  line-height: 2;
+  box-sizing: border-box;
+  font-family: Georgia, serif;
+  counter-reset: figure subfigure table chapter appendix;
+}
+
+* {
+	box-sizing: inherit;
+}
+
+body {
+	font-size: 1.3rem;
+	margin: 0;
+}
+
+hr {
+	border: none;
+	border-top: 1px solid black;
+}
+
+a {
+	color: #4455ff;
+}
+
+a[href^="http"] {
+	background: url('img/external-link.png') no-repeat 100% -2px;
+	background-size: 16px 16px;
+	padding-right: 20px;
+}
+
+h1 {
+	font-size: 2rem;
+}
+
+h2 {
+	font-size: 1.8rem;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a {
+	text-decoration: none;
+	color: black;
+}
+
+h3 {
+	font-size: 1.6rem;
+}
+
+h4 {
+	font-size: 1.4rem;
+	font-weight: normal;
+	font-style: italic;
+}
+
+h5 {
+	display: inline;
+	font-style: italic;
+	font-weight: normal;
+	font-size: 1.3rem;
+}
+
+h5::before {
+	content: " ";
+	display: block;
+	margin-top: 1rem;
+}
+
+h5::after {
+	content: ":";
+}
+ 
+ol,
+ul {
+	padding-left: 2rem;
+}
+
+ol ol,
+ul ul {
+	font-size: 0.9em;
+}
+
+dt {
+	font-weight: bold;
+}
+
+.sc {
+	font-variant: small-caps;
+}
+
+/*
+ ******************************************************************************
+ * Navigation
+ ******************************************************************************
+ */
+ 
+nav {
+	float: right;
+	position: sticky;
+	top: 0;
+	left: 85%;
+	font-size: 0.8rem;
+	height: 100vh;
+	width: 15%;
+	padding-left: 2.5%;
+	display: flex;
+	flex-direction: column;
+}
+
+nav > * {
+	padding: 0.25em;
+	width: 100%;
+	flex-grow: 1;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-transform: uppercase;
+	word-break: normal;
+	gap: 1rem;
+	text-decoration: none;
+	color: black;
+}
+
+nav > *:first-child,
+nav > *:nth-child(3) {
+	background-color: #f5f5ff;
+}
+
+nav > *:nth-child(2) {
+	background-color: #d6d9ff;
+}
+
+#section-arrow3 {
+	animation: hideshow 1.5s linear;
+}
+
+#section-arrow2 {
+	animation: hideshow 1.5s linear 1.5s;
+}
+
+#section-arrow1 {
+	animation: hideshow 1.5s linear 3s;
+}
+
+@keyframes hideshow {
+  0% { opacity: 0; }
+  33% { opacity: 1; }
+  66% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/*
+ ******************************************************************************
+ * Table of contents
+ ******************************************************************************
+ */
+
+#toc {
+	min-height: 100vh;
+}
+
+/*
+ ******************************************************************************
+ * Acronyms
+ ******************************************************************************
+ */
+
+#acronyms {
+	min-height: 100vh;
+}
+
+#acronyms dl {
+	display: grid;
+	grid-template-columns: max-content auto;
+}
+
+#acronyms dt {
+  grid-column-start: 1;
+}
+
+#acronyms dd {
+  grid-column-start: 2;
+}
+
+a[href^="#acr"] {
+	text-decoration: underline dotted gray;
+	color: black;
+}
+
+/*
+ ******************************************************************************
+ * Bibliography
+ ******************************************************************************
+ */
+
+#bibliography dl {
+	display: grid;
+	grid-template-columns: max-content auto;
+}
+
+#bibliography dt {
+  grid-column-start: 1;
+}
+
+#bibliography dd {
+  grid-column-start: 2;
+  word-break: break-word;
+}
+
+/*
+ ******************************************************************************
+ * Wrapper for content
+ ******************************************************************************
+ */
+
+#wrapper {
+	width: 100vw;
+	height: 100vh;
+	scroll-snap-type: y mandatory;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media (orientation: landscape) {
+	#wrapper {
+		width: 50%;
+	}
+}
+
+#wrapper > header,
+#wrapper section {
+	padding: 1rem;
+	scroll-snap-align: start;
+}
+
+#wrapper section {
+	padding-top: 0;
+	padding-bottom: 25vh;
+	width: 85%;
+	height: 100vh;
+	overflow-y: scroll;
+}
+
+/*
+ ******************************************************************************
+ * Title page
+ ******************************************************************************
+ */
+
+#titlepage {
+	height: 100%;
+	width: 100%;
+	display: grid;
+	align-content: space-evenly;
+	text-align: center;
+	background-color: #ffffffcc;
+	background-image: url("img/ovgu.svg");
+	background-size: 75%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-blend-mode: lighten;
+}
+
+#titlepage * {
+	width: 100%;
+}
+
+#titlepage #title {
+	font-size: 2.3rem;
+}
+
+#titlepage #subtitle {
+	font-size: 1.6rem;
+}
+
+#titlepage #thesis-type {
+	font-size: 1.3rem;
+}
+
+#titlepage #author {
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+#titlepage #supervisors,
+#titlepage #institution {
+	font-size: 1.1rem;
+}
+
+/*
+ ******************************************************************************
+ * Section headers
+ ******************************************************************************
+ */
+ 
+section header h1 {
+	border-bottom: black 1px solid;
+}
+
+section.chapter header .chapter-num,
+section.appendix header .appendix-num {
+	font-size: 1rem;
+	font-style: italic;
+	text-align: right;
+	margin-top: 1.33rem;
+	float: right;
+}
+
+section.chapter header .chapter-num {
+	counter-increment: chapter;
+	counter-reset: subchapter;
+}
+
+section.appendix header .appendix-num {
+	counter-increment: appendix;
+}
+
+section.chapter header .chapter-num::before {
+	content: "Chapter " counter(chapter);
+}
+
+section.appendix header .appendix-num::before {
+	content: "Appendix " counter(appendix);
+}
+
+section.chapter h2 {
+	counter-increment: subchapter;
+	counter-reset: subsubchapter;
+}
+
+section.chapter h2::before {
+	content: counter(chapter) "." counter(subchapter);
+	font-style: italic;
+	padding-right: 1rem;
+}
+
+section.chapter h3 {
+	counter-increment: subsubchapter;
+}
+
+section.chapter h3::before {
+	content: counter(chapter) "." counter(subchapter) "." counter(subsubchapter);
+	font-style: italic;
+	padding-right: 1rem;
+}
+
+/*
+ ******************************************************************************
+ * Figures
+ ******************************************************************************
+ */
+
+figure {
+	text-align: center;
+	width: 100%;
+	margin: 1rem 0;
+	padding: 1rem 2.5%;
+}
+
+/* figure:has(> figure) { is currently not well-supported */
+figure.has-subfigures {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	counter-reset: subfigure;
+}
+
+figure figure {
+	flex-basis: max(50%, 200px);
+	flex-grow: 1;
+	padding: 1rem 0;
+}
+
+figcaption {
+	width: 100%;
+	border: 1px solid #cccccc;
+}
+
+figure figure figcaption {
+	border: 0;
+}
+
+figcaption::before {
+	counter-increment: figure;
+	content: "Figure " counter(figure) ": ";
+	font-style: italic;
+}
+
+figure figure figcaption::before {
+	counter-increment: subfigure;
+	content: counter(subfigure, lower-alpha) ") ";
+}
+
+figure pre {
+	text-align: left;
+	margin: 0;
+}
+
+img,
+svg {
+	width: 100%;
+}
+
+/*
+ ******************************************************************************
+ * Tables
+ ******************************************************************************
+ */
+
+table caption::before {
+	counter-increment: table;
+	content: "Table " counter(table) ": ";
+	font-style: italic;
+}
+
+table {
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+	border-collapse: collapse;
+	word-wrap: anywhere;
+	margin: 2rem 0;
+	width: 100%;
+}
+
+table td {
+	font-size: 0.8em;
+}
+
+thead {
+	font-weight: bold;
+}
+
+thead td {
+	border-bottom: 1px solid black;
+}
+
+tbody tr:nth-child(even) {
+	background-color: #eeeeee;
+}
+
+tbody tr.hl {
+	background-color: #d6d9ff;
+}
+
+tbody tr.hl ~ tr.hl:nth-child(even) {
+	background-color: #a7afff;
+}
+
+tbody tr.subhead {
+	border-bottom: 1px solid black;
+	border-top: 1px solid black;
+	font-style: italic;
+}
