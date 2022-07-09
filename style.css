@@ -5,11 +5,11 @@
  */
 
 html {
-  font-size: 10px;
-  line-height: 2;
-  box-sizing: border-box;
-  font-family: Georgia, serif;
-  counter-reset: figure subfigure table chapter appendix;
+	font-size: 10px;
+	line-height: 2;
+	box-sizing: border-box;
+	font-family: Georgia, serif;
+	counter-reset: figure subfigure table chapter appendix;
 }
 
 * {
@@ -109,7 +109,7 @@ nav {
 	top: 0;
 	left: 85%;
 	font-size: 0.8rem;
-	height: 100vh;
+	height: 100%;
 	width: 15%;
 	padding-left: 2.5%;
 	display: flex;
@@ -140,23 +140,23 @@ nav > *:nth-child(2) {
 	background-color: #d6d9ff;
 }
 
-#section-arrow3 {
+.section-arrow3 {
 	animation: hideshow 1.5s linear;
 }
 
-#section-arrow2 {
+.section-arrow2 {
 	animation: hideshow 1.5s linear 1.5s;
 }
 
-#section-arrow1 {
+.section-arrow1 {
 	animation: hideshow 1.5s linear 3s;
 }
 
 @keyframes hideshow {
-  0% { opacity: 0; }
-  33% { opacity: 1; }
-  66% { opacity: 0; }
-  100% { opacity: 1; }
+	0% { opacity: 0; }
+	33% { opacity: 1; }
+	66% { opacity: 0; }
+	100% { opacity: 1; }
 }
 
 /*
@@ -185,11 +185,11 @@ nav > *:nth-child(2) {
 }
 
 #acronyms dt {
-  grid-column-start: 1;
+	grid-column-start: 1;
 }
 
 #acronyms dd {
-  grid-column-start: 2;
+	grid-column-start: 2;
 }
 
 a[href^="#acr"] {
@@ -209,12 +209,12 @@ a[href^="#acr"] {
 }
 
 #bibliography dt {
-  grid-column-start: 1;
+	grid-column-start: 1;
 }
 
 #bibliography dd {
-  grid-column-start: 2;
-  word-break: break-word;
+	grid-column-start: 2;
+	overflow-wrap: anywhere;
 }
 
 /*
@@ -224,18 +224,19 @@ a[href^="#acr"] {
  */
 
 #wrapper {
+	position: absolute;
 	width: 100vw;
-	height: 100vh;
+	height: 100%;
 	scroll-snap-type: y mandatory;
 	overflow-y: scroll;
 	overflow-x: hidden;
-	margin-left: auto;
-	margin-right: auto;
 }
 
 @media (orientation: landscape) {
 	#wrapper {
 		width: 50%;
+		margin-left: 25%;
+		margin-right: 25%;
 	}
 }
 
@@ -249,7 +250,7 @@ a[href^="#acr"] {
 	padding-top: 0;
 	padding-bottom: 25vh;
 	width: 85%;
-	height: 100vh;
+	height: 100%;
 	overflow-y: scroll;
 }
 
