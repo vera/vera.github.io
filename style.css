@@ -285,7 +285,7 @@ a[href^="#acr"] {
 }
 
 #titlepage-triangle-text img {
-	width: 25px;
+	width: 23px;
 	height: auto;
 	margin-top: 5px;
 }
@@ -302,10 +302,12 @@ a[href^="#acr"] {
 	background-repeat: no-repeat;
 	background-position: center;
 	background-blend-mode: lighten;
+	line-height: initial;
 }
 
 #titlepage * {
 	width: 100%;
+	margin: 2vh 0;
 }
 
 #titlepage #title {
