@@ -8,6 +8,12 @@
   </head>
   <body>
     <main id="wrapper">
+    	<div id="titlepage-triangle"></div>
+    	<div id="titlepage-triangle-text">
+    		<a href="https://github.com/vera/vera.github.io" target="_blank">
+    		Find this page on<br/>
+    		<img src="img/github-logo.svg" alt="GitHub"/></a>
+    	</div>
       <header id="titlepage">
         <div>
           <h1 id="title">Software Updates for the Internet of Things</h1>
@@ -1013,12 +1019,11 @@ The third section presents an overview over works describing firmware update mec
 					</thead>
 					<tbody>
 						<tr>
-							<td>Replay attack</td>
-							<td style="border-bottom: 1px solid black;">Attacker sends a version older than the currently installed one.</td>
-							<td style="border-bottom: 1px solid black;">Monotonic sequence number in the manifest (signed)</td>
+							<td rowspan="2">Replay attack</td>
+							<td>Attacker sends a version older than the currently installed one.</td>
+							<td>Monotonic sequence number in the manifest (signed)</td>
 						</tr>
 						<tr>
-							<td></td>
 							<td>Attacker replays an update meant for another device.</td>
 							<td>Vendor, device and device class ID conditions in the manifest (signed)</td>
 						</tr>
