@@ -232,7 +232,7 @@ a[href^="#acr"] {
 	overflow-x: hidden;
 }
 
-@media (orientation: landscape) {
+@media (orientation: landscape) and (min-width: 1024px) {
 	#wrapper {
 		width: 50%;
 		margin-left: 25%;
